@@ -4,7 +4,10 @@
 import express = require('express');
 var app:express.Application = express();
 
-app.get('/', (req:express.Request, res:express.Response) => {
+app.use(express.static('client'));
+
+
+app.get('/hello', (req:express.Request, res:express.Response) => {
   res.send('Hello World!');
 });
 
